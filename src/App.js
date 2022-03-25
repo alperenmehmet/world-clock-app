@@ -1,10 +1,22 @@
-import { Container, Text } from '@chakra-ui/react';
+import { Image, Text } from '@chakra-ui/react';
+
+import dayTime from './assets/day-time.jpg';
+import { BASE_URL_FREE_GEO } from './constants/api';
 
 const App = () => {
   return (
-    <Container>
-      <Text fontSize='2xl'>hello new app</Text>
-    </Container>
+    <>
+      <Image
+        src={dayTime}
+        bgPosition='center'
+        bgSize='cover'
+        bgRepeat='no-repeat'
+        bgAttachment='fixed'
+        position='fixed'
+        zIndex='-1'
+      />
+      <Text>hello</Text>
+    </>
   );
 };
 
