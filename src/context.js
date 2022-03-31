@@ -17,7 +17,10 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     fetchQuotes();
-  }, [fetchQuotes]);
+  }, []);
+
+  console.log(quote);
+
   return (
     <AppContext.Provider value={{ quote, setQuote }}>
       {children}

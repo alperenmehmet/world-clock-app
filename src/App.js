@@ -1,6 +1,7 @@
-import { Image, Text } from '@chakra-ui/react';
+import { Container, Image, Text } from '@chakra-ui/react';
 
 import dayTime from './assets/day-time.jpg';
+import Quotes from './components/Quotes';
 import { BASE_URL_FREE_GEO } from './constants/api';
 
 const App = () => {
@@ -15,7 +16,7 @@ const App = () => {
         position='fixed'
         zIndex='-1'
       />
-      <Text>hello</Text>
+      <Quotes />
     </>
   );
 };
