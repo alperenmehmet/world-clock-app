@@ -1,12 +1,15 @@
-import { Center, Container, Flex, Text } from '@chakra-ui/react';
-import React from 'react';
-import { useGlobalContext } from '../context';
+import { Flex, Text } from '@chakra-ui/react';
+import React, { useEffect, useState } from 'react';
+import { getQuote } from '../constants/api';
 
 const Quotes = () => {
-  const { quote } = useGlobalContext();
-  console.log(quote);
+  const [quote, setQuote] = useState({});
+
+  useEffect(() => {
+    getQuote().then((data) => data && setQuote(data));
+  }, []);
   return (
-    <Flex margin={10} flexDirection='column' position='absolute'>
+    <Flex margin={10} flexDirection='column' width='500px' position='absolute'>
       <Text fontStyle='italic'>"{quote.content}"</Text>
       <Text fontWeight='bold'>{quote.author}</Text>
     </Flex>
