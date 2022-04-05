@@ -1,6 +1,6 @@
 import { Flex, Text } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
-import { getQuote } from '../constants/api';
+import { getGeo, getQuote } from '../constants/api';
 
 const Quotes = () => {
   const [quote, setQuote] = useState({});

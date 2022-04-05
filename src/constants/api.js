@@ -10,3 +10,10 @@ export const getQuote = async () => {
   const result = await axios.get(`${BASE_URL_QUOTE}`).then(({ data }) => data);
   return result;
 };
+
+export const getGeo = async () => {
+  const result = await axios
+    .get(`${BASE_URL_FREE_GEO}${process.env.REACT_APP_GEO_KEY}`)
+    .then(({ data }) => console.log(data));
+  return result;
+};
