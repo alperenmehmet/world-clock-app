@@ -14,6 +14,13 @@ export const getQuote = async () => {
 export const getGeo = async () => {
   const result = await axios
     .get(`${BASE_URL_FREE_GEO}${process.env.REACT_APP_GEO_KEY}`)
-    .then(({ data }) => console.log(data));
+    .then(({ data }) => data);
+  return result.time_zone;
+};
+
+export const getTime = async (geoIp) => {
+  const result = await axios
+    .get(`${BASE_URL_WORLD_TIME}${geoIp}`)
+    .then((data) => data);
   return result;
 };
