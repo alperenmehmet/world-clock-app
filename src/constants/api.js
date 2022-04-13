@@ -7,20 +7,25 @@ export const BASE_URL_WORLD_TIME = 'https://worldtimeapi.org/api/timezone/';
 export const BASE_URL_FREE_GEO = 'https://api.freegeoip.app/json/?apikey=';
 
 export const getQuote = async () => {
-  const result = await axios.get(`${BASE_URL_QUOTE}`).then(({ data }) => data);
+  const result = await axios
+    .get(`${BASE_URL_QUOTE}`)
+    .then(({ data }) => data)
+    .catch((err) => console.log(err));
   return result;
 };
 
 export const getGeo = async () => {
   const result = await axios
     .get(`${BASE_URL_FREE_GEO}${process.env.REACT_APP_GEO_KEY}`)
-    .then(({ data }) => data);
+    .then(({ data }) => data)
+    .catch((err) => console.log(err));
   return result.time_zone;
 };
 
 export const getTime = async (geoIp) => {
   const result = await axios
     .get(`${BASE_URL_WORLD_TIME}${geoIp}`)
-    .then((data) => data);
+    .then((data) => data)
+    .catch((err) => console.log(err));
   return result;
 };

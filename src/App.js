@@ -1,6 +1,7 @@
 import { Image } from '@chakra-ui/react';
 import dayTime from './assets/day-time.jpg';
 import Quotes from './components/Quotes';
+import Time from './components/Time';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         zIndex='-1'
       />
       <Quotes />
+      <Time />
     </>
   );
 };
